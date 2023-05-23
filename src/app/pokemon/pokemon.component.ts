@@ -14,7 +14,14 @@ export class PokemonComponent implements OnInit {
 
   ngOnInit() {
 
-    this.pokemonService.getAll().subscribe(data => this.cards = data);
+    this.pokemonService.getAll().subscribe((data: Pokemon[]) => this.cards = data);
+
+
+    this.pokemonService.getAll().subscribe({
+      next: (data: Pokemon[]) => this.cards = data,
+      error: err => console.error(err)
+      // TODO bonne façon de l'écrire
+    })
 
   }
 

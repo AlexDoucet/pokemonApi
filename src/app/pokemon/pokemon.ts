@@ -1,3 +1,4 @@
+// TODO: à déplacer dans un folder à part pour les modèles /domain
 export class Pokemon {
 
   artist!: string;
